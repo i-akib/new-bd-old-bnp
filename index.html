@@ -34,28 +34,24 @@
             text-align: justify;
             margin-bottom: 10px;
         }
-        iframe {
-            width: 1010px;
-            height: 1020px;
-            border: none;
-            background-color: white;
-            margin-top: 10px;
-        }
+
         .iframe-set {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             width: 100%;
         }
+        
         .iframe-set iframe {
             width: 95%;
             max-width: 1010px;
             height: 1020px;
             border: none;
-            margin-top: 10px;
             background-color: white;
+            margin: 10px 0;
+            display: block; /* Ensures no inline layout behavior */
         }
-
 
         footer {
             margin-top: 10px;
@@ -141,7 +137,7 @@
 
     </script>
 </head>
-<body>
+<body style="visibility: hidden;" onload="document.body.style.visibility='visible';">
     <button id="toggleButton" class="toggle" onclick="toggleLanguage()">English</button>
     <a id="datasetButton" class="dataset-button" href="https://docs.google.com/spreadsheets/d/1n7Go1BwYl25wRl1ePPDsRpC5g28n1lWUAhrtZmCTXwo/" target="_blank">Dataset</a>
     <h1 id="mainHeading">নতুন বাংলাদেশ, পুরনো বিএনপি</h1>
