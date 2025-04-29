@@ -48,6 +48,21 @@
             width: 100%;
             text-align: center;
         }
+        .dataset-button {
+            position: absolute;
+            top: 75px;
+            right: 10px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: orange;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            z-index: 1000;
+        }
+
         .toggle {
             position: absolute;
             top: 20px;
@@ -70,6 +85,7 @@
             var heading = document.getElementById("mainHeading");
             var iframeEng = document.getElementById("iframeEnglish");
             var iframeBan = document.getElementById("iframeBangla");
+            var datasetButton = document.getElementById("datasetButton");
         
             if (englishText.style.display === "none") {
                 englishText.style.display = "block";
@@ -79,6 +95,7 @@
                 toggleButton.textContent = "বাংলা";
                 title.textContent = "New Bangladesh, Old BNP";
                 heading.textContent = "New Bangladesh, Old BNP";
+                datasetButton.textContent = "Dataset";
             } else {
                 englishText.style.display = "none";
                 banglaText.style.display = "block";
@@ -87,13 +104,23 @@
                 toggleButton.textContent = "English";
                 title.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
                 heading.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
+                datasetButton.textContent = "ডেটাসেট";
             }
+        }
+        window.onload = function() {
+            document.getElementById("english").style.display = "none";
+            document.getElementById("bangla").style.display = "block";
+            document.getElementById("toggleButton").textContent = "English";
+            document.getElementById("pageTitle").textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
+            document.getElementById("mainHeading").textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
+            document.getElementById("datasetButton").textContent = "ডেটাসেট";
         }
 
     </script>
 </head>
 <body>
     <button id="toggleButton" class="toggle" onclick="toggleLanguage()">English</button>
+    <a id="datasetButton" class="dataset-button" href="https://docs.google.com/spreadsheets/d/1n7Go1BwYl25wRl1ePPDsRpC5g28n1lWUAhrtZmCTXwo/" target="_blank">Dataset</a>
     <h1 id="mainHeading">নতুন বাংলাদেশ, পুরনো বিএনপি</h1>
     <p id="english" style="display: none;">The sacrifice of students and the public during the July revolution gave us hope for a new Bangladesh. But the members of the biggest political party, Bangladesh Nationalist Party (BNP), are still operating in the old system where politics is synonymous with crime and violence. We have compiled the crimes committed by the members of BNP and its affiliated groups as reported by Prothom Alo since August 7, 2024. We have divided the crimes into three categories:<br><br>
     1. Financial & Verbal Violence (extortion, threats, illegal possessions, etc.)<br>
