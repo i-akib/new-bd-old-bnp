@@ -41,6 +41,21 @@
             background-color: white;
             margin-top: 10px;
         }
+        .iframe-set {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .iframe-set iframe {
+            width: 95%;
+            max-width: 1010px;
+            height: 1020px;
+            border: none;
+            margin-top: 10px;
+            background-color: white;
+        }
+
 
         footer {
             margin-top: 10px;
@@ -154,7 +169,7 @@
     </div>
     
     <!-- English Iframes -->
-    <div class="iframe-set" id="englishIframes">
+    <div class="iframe-set" id="englishIframes" style="display: none;">
         <iframe src="bnp_map_eng.html"></iframe>
         <iframe src="bnp_death_eng.html"></iframe>
         <iframe src="bnp_trend_eng.html"></iframe>
