@@ -50,8 +50,9 @@
             border: none;
             background-color: white;
             margin: 10px 0;
-            display: block; /* Ensures no inline layout behavior */
+            display: block; /* Ensure no inline behavior */
         }
+        
 
         footer {
             margin-top: 10px;
@@ -89,37 +90,41 @@
         }
     </style>
     <script>
-            function toggleLanguage() {
-                var englishText = document.getElementById("english");
-                var banglaText = document.getElementById("bangla");
-                var toggleButton = document.getElementById("toggleButton");
-                var title = document.getElementById("pageTitle");
-                var heading = document.getElementById("mainHeading");
-                var datasetButton = document.getElementById("datasetButton");
+        function toggleLanguage() {
+            var englishText = document.getElementById("english");
+            var banglaText = document.getElementById("bangla");
+            var toggleButton = document.getElementById("toggleButton");
+            var title = document.getElementById("pageTitle");
+            var heading = document.getElementById("mainHeading");
             
-                var englishIframes = document.getElementById("englishIframes");
-                var banglaIframes = document.getElementById("banglaIframes");
+            // Get all iframes
+            var iframeSet = document.querySelectorAll('.iframe-set iframe');
             
-                if (englishText.style.display === "none") {
-                    englishText.style.display = "block";
-                    banglaText.style.display = "none";
-                    toggleButton.textContent = "বাংলা";
-                    title.textContent = "New Bangladesh, Old BNP";
-                    heading.textContent = "New Bangladesh, Old BNP";
-                    datasetButton.textContent = "Dataset";
-                    englishIframes.style.display = "block";
-                    banglaIframes.style.display = "none";
-                } else {
-                    englishText.style.display = "none";
-                    banglaText.style.display = "block";
-                    toggleButton.textContent = "English";
-                    title.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
-                    heading.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
-                    datasetButton.textContent = "ডেটাসেট";
-                    englishIframes.style.display = "none";
-                    banglaIframes.style.display = "block";
-                }
+            // Check language and switch visibility
+            if (englishText.style.display === "none") {
+                englishText.style.display = "block";
+                banglaText.style.display = "none";
+                toggleButton.textContent = "বাংলা";
+                title.textContent = "New Bangladesh, Old BNP";
+                heading.textContent = "New Bangladesh, Old BNP";
+                
+                // Reset iframe styles to the center after switching to English
+                iframeSet.forEach(iframe => {
+                    iframe.style.display = 'block'; // Ensure it's visible
+                });
+            } else {
+                englishText.style.display = "none";
+                banglaText.style.display = "block";
+                toggleButton.textContent = "English";
+                title.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
+                heading.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
+                
+                // Reset iframe styles to the center after switching to Bangla
+                iframeSet.forEach(iframe => {
+                    iframe.style.display = 'block'; // Ensure it's visible
+                });
             }
+        }
 
 
         window.onload = function() {
