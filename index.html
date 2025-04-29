@@ -68,28 +68,28 @@
             var toggleButton = document.getElementById("toggleButton");
             var title = document.getElementById("pageTitle");
             var heading = document.getElementById("mainHeading");
-            
+            var iframeEng = document.getElementById("iframeEnglish");
+            var iframeBan = document.getElementById("iframeBangla");
+        
             if (englishText.style.display === "none") {
                 englishText.style.display = "block";
                 banglaText.style.display = "none";
+                iframeEng.style.display = "block";
+                iframeBan.style.display = "none";
                 toggleButton.textContent = "বাংলা";
                 title.textContent = "New Bangladesh, Old BNP";
                 heading.textContent = "New Bangladesh, Old BNP";
             } else {
                 englishText.style.display = "none";
                 banglaText.style.display = "block";
+                iframeEng.style.display = "none";
+                iframeBan.style.display = "block";
                 toggleButton.textContent = "English";
                 title.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
                 heading.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
             }
         }
-        window.onload = function() {
-            document.getElementById("english").style.display = "none";
-            document.getElementById("bangla").style.display = "block";
-            document.getElementById("toggleButton").textContent = "English";
-            document.getElementById("pageTitle").textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
-            document.getElementById("mainHeading").textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
-        }
+
     </script>
 </head>
 <body>
@@ -108,11 +108,35 @@
     ৩. মৃত্যু<br><br>
     সংগৃহীত তথ্য <a href="https://docs.google.com/spreadsheets/d/1n7Go1BwYl25wRl1ePPDsRpC5g28n1lWUAhrtZmCTXwo/" style="color: yellow;" target="_blank">এখানে</a> দেখা যাবে। এই তালিকা সম্পূর্ণ কিংবা ১০০% সঠিক নয়। কোনো অসম্পূর্ণতা বা ভুল চোখে পড়লে অনুগ্রহ করে আমাদের <a href="https://forms.gle/47vbaiYcDr2eGwRE9" style="color: yellow;" target="_blank">ফর্ম</a> এর মাধ্যমে জানান।
     </p>
-    
+
+    <div id="iframeBangla">
     <iframe src="bnp_map_bang.html"></iframe>
+    </div>
+    <div id="iframeEnglish" style="display: none;">
+    <iframe src="bnp_map_bang.html"></iframe>
+    </div>
+
+    <div id="iframeBangla">
     <iframe src="bnp_death_bang.html"></iframe>
+    </div>
+    <div id="iframeEnglish" style="display: none;">
+    <iframe src="bnp_death_eng.html"></iframe>
+    </div>
+
+    <div id="iframeBangla">
     <iframe src="bnp_trend_bang.html"></iframe>
+    </div>
+    <div id="iframeEnglish" style="display: none;">
+    <iframe src="bnp_trend_eng.html"></iframe>
+    </div>
+
+    <div id="iframeBangla">
     <iframe src="comparision_bang.html"></iframe>
+    </div>
+    <div id="iframeEnglish" style="display: none;">
+    <iframe src="comparision_eng.html"></iframe>
+    </div>
+
     <footer>
         Team Members: Istiak Akib and Abidur Rahman. The map was made by adapting code from <a href="https://github.com/ahnaf-tahmid-chowdhury/Choropleth-Bangladesh" style="color: yellow;" target="_blank">Choropleth-Bangladesh</a>.
     </footer>
