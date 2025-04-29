@@ -41,6 +41,15 @@
             background-color: white;
             margin-top: 10px;
         }
+        .iframe-set iframe {
+            width: 95%;
+            max-width: 1010px;
+            height: 1020px;
+            border: none;
+            margin-top: 10px;
+            background-color: white;
+        }
+
         footer {
             margin-top: 10px;
             padding: 10px;
@@ -77,44 +86,51 @@
         }
     </style>
     <script>
-        function toggleLanguage() {
-            var englishText = document.getElementById("english");
-            var banglaText = document.getElementById("bangla");
-            var toggleButton = document.getElementById("toggleButton");
-            var title = document.getElementById("pageTitle");
-            var heading = document.getElementById("mainHeading");
-            var iframeEng = document.getElementById("iframeEnglish");
-            var iframeBan = document.getElementById("iframeBangla");
-            var datasetButton = document.getElementById("datasetButton");
-        
-            if (englishText.style.display === "none") {
-                englishText.style.display = "block";
-                banglaText.style.display = "none";
-                iframeEng.style.display = "block";
-                iframeBan.style.display = "none";
-                toggleButton.textContent = "বাংলা";
-                title.textContent = "New Bangladesh, Old BNP";
-                heading.textContent = "New Bangladesh, Old BNP";
-                datasetButton.textContent = "Dataset";
-            } else {
-                englishText.style.display = "none";
-                banglaText.style.display = "block";
-                iframeEng.style.display = "none";
-                iframeBan.style.display = "block";
-                toggleButton.textContent = "English";
-                title.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
-                heading.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
-                datasetButton.textContent = "ডেটাসেট";
+            function toggleLanguage() {
+                var englishText = document.getElementById("english");
+                var banglaText = document.getElementById("bangla");
+                var toggleButton = document.getElementById("toggleButton");
+                var title = document.getElementById("pageTitle");
+                var heading = document.getElementById("mainHeading");
+                var datasetButton = document.getElementById("datasetButton");
+            
+                var englishIframes = document.getElementById("englishIframes");
+                var banglaIframes = document.getElementById("banglaIframes");
+            
+                if (englishText.style.display === "none") {
+                    englishText.style.display = "block";
+                    banglaText.style.display = "none";
+                    toggleButton.textContent = "বাংলা";
+                    title.textContent = "New Bangladesh, Old BNP";
+                    heading.textContent = "New Bangladesh, Old BNP";
+                    datasetButton.textContent = "Dataset";
+                    englishIframes.style.display = "block";
+                    banglaIframes.style.display = "none";
+                } else {
+                    englishText.style.display = "none";
+                    banglaText.style.display = "block";
+                    toggleButton.textContent = "English";
+                    title.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
+                    heading.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
+                    datasetButton.textContent = "ডেটাসেট";
+                    englishIframes.style.display = "none";
+                    banglaIframes.style.display = "block";
+                }
             }
-        }
+
+
         window.onload = function() {
-            document.getElementById("english").style.display = "none";
-            document.getElementById("bangla").style.display = "block";
-            document.getElementById("toggleButton").textContent = "English";
-            document.getElementById("pageTitle").textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
-            document.getElementById("mainHeading").textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
-            document.getElementById("datasetButton").textContent = "ডেটাসেট";
-        }
+                document.getElementById("english").style.display = "none";
+                document.getElementById("bangla").style.display = "block";
+                document.getElementById("englishIframes").style.display = "none";
+                document.getElementById("banglaIframes").style.display = "block";
+                document.getElementById("toggleButton").textContent = "English";
+                document.getElementById("pageTitle").textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
+                document.getElementById("mainHeading").textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
+                document.getElementById("datasetButton").textContent = "ডেটাসেট";
+            }
+
+
 
     </script>
 </head>
@@ -136,32 +152,21 @@
     সংগৃহীত তথ্য <a href="https://docs.google.com/spreadsheets/d/1n7Go1BwYl25wRl1ePPDsRpC5g28n1lWUAhrtZmCTXwo/" style="color: yellow;" target="_blank">এখানে</a> দেখা যাবে। এই তালিকা সম্পূর্ণ কিংবা ১০০% সঠিক নয়। কোনো অসম্পূর্ণতা বা ভুল চোখে পড়লে অনুগ্রহ করে আমাদের <a href="https://forms.gle/47vbaiYcDr2eGwRE9" style="color: yellow;" target="_blank">ফর্ম</a> এর মাধ্যমে জানান।
     </p>
 
-    <div id="iframeBangla">
-    <iframe src="bnp_map_bang.html"></iframe>
-    </div>
-    <div id="iframeEnglish" style="display: none;">
-    <iframe src="bnp_map_eng.html"></iframe>
-    </div>
 
-    <div id="iframeBangla">
-    <iframe src="bnp_death_bang.html"></iframe>
+    <!-- Bangla Iframes -->
+    <div class="iframe-set" id="banglaIframes">
+        <iframe src="bnp_map_bang.html"></iframe>
+        <iframe src="bnp_death_bang.html"></iframe>
+        <iframe src="bnp_trend_bang.html"></iframe>
+        <iframe src="comparision_bang.html"></iframe>
     </div>
-    <div id="iframeEnglish" style="display: none;">
-    <iframe src="bnp_death_eng.html"></iframe>
-    </div>
-
-    <div id="iframeBangla">
-    <iframe src="bnp_trend_bang.html"></iframe>
-    </div>
-    <div id="iframeEnglish" style="display: none;">
-    <iframe src="bnp_trend_eng.html"></iframe>
-    </div>
-
-    <div id="iframeBangla">
-    <iframe src="comparision_bang.html"></iframe>
-    </div>
-    <div id="iframeEnglish" style="display: none;">
-    <iframe src="comparision_eng.html"></iframe>
+    
+    <!-- English Iframes -->
+    <div class="iframe-set" id="englishIframes" style="display: none;">
+        <iframe src="bnp_map_eng.html"></iframe>
+        <iframe src="bnp_death_eng.html"></iframe>
+        <iframe src="bnp_trend_eng.html"></iframe>
+        <iframe src="comparision_eng.html"></iframe>
     </div>
 
     <footer>
