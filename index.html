@@ -39,10 +39,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             width: 100%;
         }
-        
         .iframe-set iframe {
             width: 95%;
             max-width: 1010px;
@@ -96,35 +94,28 @@
             var toggleButton = document.getElementById("toggleButton");
             var title = document.getElementById("pageTitle");
             var heading = document.getElementById("mainHeading");
-            
-            // Get all iframes
-            var iframeSet = document.querySelectorAll('.iframe-set iframe');
-            
-            // Check language and switch visibility
+            var englishPlots = document.getElementById("englishPlots");
+            var banglaPlots = document.getElementById("banglaPlots");
+        
             if (englishText.style.display === "none") {
                 englishText.style.display = "block";
                 banglaText.style.display = "none";
+                englishPlots.style.display = "flex";
+                banglaPlots.style.display = "none";
                 toggleButton.textContent = "বাংলা";
                 title.textContent = "New Bangladesh, Old BNP";
                 heading.textContent = "New Bangladesh, Old BNP";
-                
-                // Reset iframe styles to the center after switching to English
-                iframeSet.forEach(iframe => {
-                    iframe.style.display = 'block'; // Ensure it's visible
-                });
             } else {
                 englishText.style.display = "none";
                 banglaText.style.display = "block";
+                englishPlots.style.display = "none";
+                banglaPlots.style.display = "flex";
                 toggleButton.textContent = "English";
                 title.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
                 heading.textContent = "নতুন বাংলাদেশ, পুরনো বিএনপি";
-                
-                // Reset iframe styles to the center after switching to Bangla
-                iframeSet.forEach(iframe => {
-                    iframe.style.display = 'block'; // Ensure it's visible
-                });
             }
         }
+
 
 
         window.onload = function() {
@@ -160,17 +151,14 @@
     সংগৃহীত তথ্য <a href="https://docs.google.com/spreadsheets/d/1n7Go1BwYl25wRl1ePPDsRpC5g28n1lWUAhrtZmCTXwo/" style="color: yellow;" target="_blank">এখানে</a> দেখা যাবে। এই তালিকা সম্পূর্ণ কিংবা ১০০% সঠিক নয়। কোনো অসম্পূর্ণতা বা ভুল চোখে পড়লে অনুগ্রহ করে আমাদের <a href="https://forms.gle/47vbaiYcDr2eGwRE9" style="color: yellow;" target="_blank">ফর্ম</a> এর মাধ্যমে জানান।
     </p>
 
-
-    <!-- Bangla Iframes -->
-    <div class="iframe-set" id="banglaIframes">
+    <div id="banglaPlots" class="iframe-set">
         <iframe src="bnp_map_bang.html"></iframe>
         <iframe src="bnp_death_bang.html"></iframe>
         <iframe src="bnp_trend_bang.html"></iframe>
         <iframe src="comparision_bang.html"></iframe>
     </div>
-    
-    <!-- English Iframes -->
-    <div class="iframe-set" id="englishIframes" style="display: none;">
+
+    <div id="englishPlots" class="iframe-set" style="display: none;">
         <iframe src="bnp_map_eng.html"></iframe>
         <iframe src="bnp_death_eng.html"></iframe>
         <iframe src="bnp_trend_eng.html"></iframe>
