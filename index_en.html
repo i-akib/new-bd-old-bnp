@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=1024">
   <title>New Bangladesh, Old BNP</title>
   <style>
     body {
@@ -49,6 +49,19 @@
       text-align: center;
       font-size: 0.9em;
     }
+
+    @media (max-width: 768px) {
+      body {
+        zoom: 0.8; /* Shrinks the whole content to fit more like desktop */
+      }
+      iframe {
+        width: 1000px;
+        height: 1020px;
+      }
+    }
+    
+
+    
     .toggle {
       position: absolute;
       top: 10px;
