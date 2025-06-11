@@ -108,7 +108,7 @@
     </p>
 
     <div class="counter-container">
-        বিএনপির নেতাকর্মীদের হাতে মৃতুর সংখ্যা (৭ জুন, ২০২৫ পর্যন্ত): <span id="counter">0</span>
+        বিএনপির নেতাকর্মীদের হাতে মৃত্যু: <span id="counter">0</span>
     </div>
     
         <iframe src="bnp_map_bang.html"></iframe>
@@ -127,7 +127,7 @@
         return number.toString().split('').map(d => banglaDigits[d] || d).join('');
     }
 
-    function animateCounter(id, start, end, duration) {
+    function animateCounter(id, start, end, duration, suffix = '') {
         let obj = document.getElementById(id);
         let range = end - start;
         let current = start;
@@ -139,12 +139,14 @@
             obj.textContent = toBanglaNumber(current);
             if (current === end) {
                 clearInterval(timer);
+                obj.textContent += suffix; // Append final text
             }
         }, stepTime);
     }
 
-    animateCounter("counter", 0, 122, 2000);
+    animateCounter("counter", 0, 122, 2000, "(৭ জুন, ২০২৫ পর্যন্ত)");
 </script>
+
 
     
 </body>
