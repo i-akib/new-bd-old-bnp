@@ -122,7 +122,23 @@
     For the first two categories, we counted the number of reported incidents, not the number of individuals affected—because that level of detail was often unavailable. In the case of deaths, since reliable data was more consistently reported, we counted the number of individuals who died.  In many cases, multiple categories of crimes occurred in a single incident. As a result, the sum of the incidents across the three categories does not equal the total number of distinct events.<br>
     The compiled data can be seen <a href="https://docs.google.com/spreadsheets/d/1n7Go1BwYl25wRl1ePPDsRpC5g28n1lWUAhrtZmCTXwo/" style="color: yellow;" target="_blank">here</a>. This list is not complete or 100% accurate. Please use the <a href="https://forms.gle/47vbaiYcDr2eGwRE9" style="color: yellow;" target="_blank">form</a> to inform us of such incompleteness or inaccuracies.
   </p>
-  <script>
+
+  <div class="counter-container">
+        Total deaths by BNP reported: <span id="counter">0</span>
+  </div>
+  
+  
+        <iframe src="bnp_map_eng.html"></iframe>
+        <img src="death_eng.png" alt="Death Trend" width="1000" height="562" />
+        <img src="death_pie_eng.png" alt="Death Pie" width="1000" height="1060" />
+        <iframe src="bnp_trend_eng.html"></iframe>
+        <iframe src="comparision_eng.html"></iframe>
+
+    <footer>
+        Team Members: Istiak Akib and Abidur Rahman. The map was made by adapting code from <a href="https://github.com/ahnaf-tahmid-chowdhury/Choropleth-Bangladesh" style="color: yellow;" target="_blank">Choropleth-Bangladesh</a>.
+    </footer>
+
+    <script>
         function animateCounter(id, start, end, duration) {
             let obj = document.getElementById(id);
             let range = end - start;
@@ -142,16 +158,6 @@
         // Example usage: count up to 273 in 2 seconds
         animateCounter("counter", 0, 122, 2000);
   </script>
-
   
-        <iframe src="bnp_map_eng.html"></iframe>
-        <img src="death_eng.png" alt="Death Trend" width="1000" height="562" />
-        <img src="death_pie_eng.png" alt="Death Pie" width="1000" height="1060" />
-        <iframe src="bnp_trend_eng.html"></iframe>
-        <iframe src="comparision_eng.html"></iframe>
-
-    <footer>
-        Team Members: Istiak Akib and Abidur Rahman. The map was made by adapting code from <a href="https://github.com/ahnaf-tahmid-chowdhury/Choropleth-Bangladesh" style="color: yellow;" target="_blank">Choropleth-Bangladesh</a>.
-    </footer>
 </body>
 </html>
