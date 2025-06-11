@@ -88,25 +88,7 @@
     border-radius: 5px;
 }
     .counter-container {
-      font-size: 30    function animateCounter(id, start, end, duration, suffix = '') {
-        let obj = document.getElementById(id);
-        let range = end - start;
-        let current = start;
-        let increment = end > start ? 1 : -1;
-        let stepTime = Math.abs(Math.floor(duration / range));
-
-        let timer = setInterval(() => {
-            current += increment;
-            obj.textContent = toBanglaNumber(current);
-            if (current === end) {
-                clearInterval(timer);
-                obj.textContent += suffix; // Append final text
-            }
-        }, stepTime);
-    }
-
-    animateCounter("counter", 0, 122, 2000, " জন নিহত");
-</script>px;
+      font-size: 30px;
       font-weight: bold; 
       color: yellow;
       margin: 20px 0;
