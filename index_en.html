@@ -138,7 +138,7 @@
         Team Members: Istiak Akib and Abidur Rahman. The map was made by adapting code from <a href="https://github.com/ahnaf-tahmid-chowdhury/Choropleth-Bangladesh" style="color: yellow;" target="_blank">Choropleth-Bangladesh</a>.
     </footer>
 
-    <script>
+<script>
     function animateCounter(id, start, end, duration, suffix = '') {
         let obj = document.getElementById(id);
         let range = end - start;
@@ -148,15 +148,15 @@
 
         let timer = setInterval(() => {
             current += increment;
-            obj.textContent = toBanglaNumber(current);
+            obj.textContent = current;
             if (current === end) {
                 clearInterval(timer);
-                obj.textContent += suffix; // Append final text
+                obj.textContent += suffix; // Add final label like " people killed"
             }
         }, stepTime);
     }
 
-    animateCounter("counter", 0, 125, 2000, " (upto 9 pm, June 10, 2025)");
+    animateCounter("counter", 0, 122, 2000, " (upto 9 pm, June 10, 2025)");
 </script>
   
 </body>
