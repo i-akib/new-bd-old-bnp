@@ -120,25 +120,32 @@
         Team Members: <a href="https://i-akib.github.io/" style="color: yellow;" target="_blank">Istiak Akib</a> and Abidur Rahman. The map was made by adapting code from <a href="https://github.com/ahnaf-tahmid-chowdhury/Choropleth-Bangladesh" style="color: yellow;" target="_blank">Choropleth-Bangladesh</a>.
     </footer>
     
-    <script>
-        function animateCounter(id, start, end, duration) {
-            let obj = document.getElementById(id);
-            let range = end - start;
-            let current = start;
-            let increment = end > start ? 1 : -1;
-            let stepTime = Math.abs(Math.floor(duration / range));
+<script>
+    const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
 
-            let timer = setInterval(() => {
-                current += increment;
-                obj.textContent = current;
-                if (current === end) {
-                    clearInterval(timer);
-                }
-            }, stepTime);
-        }
+    function toBanglaNumber(number) {
+        return number.toString().split('').map(d => banglaDigits[d] || d).join('');
+    }
 
-        animateCounter("counter", 0, 122, 2000);
-    </script>
+    function animateCounter(id, start, end, duration) {
+        let obj = document.getElementById(id);
+        let range = end - start;
+        let current = start;
+        let increment = end > start ? 1 : -1;
+        let stepTime = Math.abs(Math.floor(duration / range));
+
+        let timer = setInterval(() => {
+            current += increment;
+            obj.textContent = toBanglaNumber(current);
+            if (current === end) {
+                clearInterval(timer);
+            }
+        }, stepTime);
+    }
+
+    animateCounter("counter", 0, 122, 2000);
+</script>
+
     
 </body>
 </html>
