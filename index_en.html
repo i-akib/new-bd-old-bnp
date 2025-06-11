@@ -59,9 +59,7 @@
         height: 1020px;
       }
     }
-    
 
-    
     .toggle {
       position: absolute;
       top: 10px;
@@ -89,6 +87,12 @@
     font-weight: bold;
     border-radius: 5px;
 }
+    .counter-container {
+      font-size: 24px;
+      font-weight: bold; 
+      color: yellow;
+      margin: 20px 0;
+    }
 
     @media (max-width: 768px) {
       h1 {
@@ -118,6 +122,28 @@
     For the first two categories, we counted the number of reported incidents, not the number of individuals affected—because that level of detail was often unavailable. In the case of deaths, since reliable data was more consistently reported, we counted the number of individuals who died.  In many cases, multiple categories of crimes occurred in a single incident. As a result, the sum of the incidents across the three categories does not equal the total number of distinct events.<br>
     The compiled data can be seen <a href="https://docs.google.com/spreadsheets/d/1n7Go1BwYl25wRl1ePPDsRpC5g28n1lWUAhrtZmCTXwo/" style="color: yellow;" target="_blank">here</a>. This list is not complete or 100% accurate. Please use the <a href="https://forms.gle/47vbaiYcDr2eGwRE9" style="color: yellow;" target="_blank">form</a> to inform us of such incompleteness or inaccuracies.
   </p>
+  <script>
+        function animateCounter(id, start, end, duration) {
+            let obj = document.getElementById(id);
+            let range = end - start;
+            let current = start;
+            let increment = end > start ? 1 : -1;
+            let stepTime = Math.abs(Math.floor(duration / range));
+
+            let timer = setInterval(() => {
+                current += increment;
+                obj.textContent = current;
+                if (current === end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+
+        // Example usage: count up to 273 in 2 seconds
+        animateCounter("counter", 0, 122, 2000);
+  </script>
+
+  
         <iframe src="bnp_map_eng.html"></iframe>
         <img src="death_eng.png" alt="Death Trend" width="1000" height="562" />
         <img src="death_pie_eng.png" alt="Death Pie" width="1000" height="1060" />
