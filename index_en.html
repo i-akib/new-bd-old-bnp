@@ -124,7 +124,7 @@
   </p>
 
   <div class="counter-container">
-        Deaths caused by BNP members (upto June 7, 2025): <span id="counter">0</span>
+        Deaths caused by BNP members: <span id="counter">0</span>
   </div>
   
   
@@ -139,25 +139,25 @@
     </footer>
 
     <script>
-        function animateCounter(id, start, end, duration) {
-            let obj = document.getElementById(id);
-            let range = end - start;
-            let current = start;
-            let increment = end > start ? 1 : -1;
-            let stepTime = Math.abs(Math.floor(duration / range));
+    function animateCounter(id, start, end, duration, suffix = '') {
+        let obj = document.getElementById(id);
+        let range = end - start;
+        let current = start;
+        let increment = end > start ? 1 : -1;
+        let stepTime = Math.abs(Math.floor(duration / range));
 
-            let timer = setInterval(() => {
-                current += increment;
-                obj.textContent = current;
-                if (current === end) {
-                    clearInterval(timer);
-                }
-            }, stepTime);
-        }
+        let timer = setInterval(() => {
+            current += increment;
+            obj.textContent = toBanglaNumber(current);
+            if (current === end) {
+                clearInterval(timer);
+                obj.textContent += suffix; // Append final text
+            }
+        }, stepTime);
+    }
 
-        // Example usage: count up to 273 in 2 seconds
-        animateCounter("counter", 0, 122, 2000);
-  </script>
+    animateCounter("counter", 0, 122, 2000, "(upto June 7, 2025)");
+</script>
   
 </body>
 </html>
