@@ -91,6 +91,43 @@
             color: yellow;
             margin: 20px 0;
         }
+        .custom-table {
+              width: 90%;
+              max-width: 1000px;
+              margin: 20px 0;
+              border-collapse: collapse;
+              color: white;
+        }
+
+        .custom-table td {
+              padding: 8px 12px;
+              text-align: center;
+        }    
+
+        .table-footer {
+              margin-top: -10px;
+              margin-bottom: 20px;
+              font-size: 1em;
+              text-align: right;
+              width: 90%;
+              max-width: 1000px;
+        }
+
+        .table-footer a {
+              color: yellow;
+              text-decoration: none;
+              font-style: italic;
+        }
+        .table-heading {
+              margin-top: 20px;
+              font-size: 1.5em;
+              font-weight: bold;
+              text-align: center;
+              color: yellow;
+        }
+
+
+
 
     </style>
 </head>
@@ -110,6 +147,25 @@
     <div class="counter-container">
         বিএনপির নেতাকর্মীদের হাতে মৃত্যু: <span id="counter">0</span>
     </div>
+
+    <h2 class="table-heading">সর্বশেষ মৃত্যুর ঘটনা</h2>
+
+    <table class="death-table">
+      <tr>
+        <td>সিরিয়াল</td> <td>নাম</td> <td>তারিখ</td> <td>নিহতের পরিচয়</td> <td>জেলা</td> <td>হত্যাকারীর পরিচয়</td>
+      </tr>
+      <tr>
+        <td>১২৬</td> <td><a href="https://www.prothomalo.com/bangladesh/district/j2lweachkl" target="_blank">মো. শাকিল মিয়া (৩২)</a></td> 
+          <td>১৪ জুন, ২০২৫ </td> <td>রিকশাচালক</td> <td>বগুড়া</td> <td>স্বেচ্ছাসেবক দল</td>
+      </tr>
+
+    </table>
+
+    <div class="table-footer">
+  <a href="https://docs.google.com/spreadsheets/d/1n7Go1BwYl25wRl1ePPDsRpC5g28n1lWUAhrtZmCTXwo/edit?gid=1908300734#gid=1908300734" target="_blank">...এবং আরও অনেকে</a>
+    </div>
+
+    
 
         <img src="death_bang.png" alt="Death Trend" width="1000" height="561" />
         <img src="death_pie_bang.png" alt="Death Pie" width="1000" height="1039" />
